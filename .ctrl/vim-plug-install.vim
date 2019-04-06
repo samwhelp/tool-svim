@@ -150,6 +150,12 @@ endfunction
 """ Head: Main
 ""
 
+" $ vim -nNRe -u vimrc -c 'try | :PlugInstall | endtry'
+" $ vim -nNRe -u vimrc -c 'try | :PlugInstall | finally | :qa! | endtry'
+" $ vim -nNRe -u vimrc -c 'try | :PlugInstall | catch | echomsg "!PlugInstall Error!" | finally | :qa! | endtry'
+" $ vim -nNRe -u vim-plug-install.vim
+
+
 function! s:TryInstallPlugin () abort
 	try
 		PlugInstall

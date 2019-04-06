@@ -64,9 +64,14 @@ function! s:ColorSchemeUse () abort
 	try
 		call s:ColorSchemePick()
 	catch
-		echomsg 'NotInstall ColorScheme:'
-		echomsg 'Please install first:'
-		echomsg ':PlugInstall'
+		"echomsg 'NotInstall ColorScheme:'
+		"echomsg 'Please install first:'
+		"echomsg ':PlugInstall'
+
+		echohl WarningMsg
+		echomsg 'ColorScheme is not installed! Please run :PlugInstall'
+		echohl None
+
 		return
 	endtry
 
@@ -218,7 +223,13 @@ function! s:Main () abort
 
 	call s:PluginManager('~/.cache/svim/plug')
 
-	call s:ColorSchemeUse()
+	"call s:ColorSchemeUse()
+
+	augroup ColorSchemeUse
+		autocmd!
+		autocmd VimEnter * call s:ColorSchemeUse()
+	augroup END
+
 
 endfunction
 
@@ -226,4 +237,32 @@ call s:Main()
 
 ""
 """ Tail: Main
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: Note
+""
+
+
+" $ vim -nNRe -u vimrc -c 'try | :PlugInstall | endtry'
+" $ vim -nNRe -u vimrc -c 'try | :PlugInstall | finally | :qa! | endtry'
+" $ vim -nNRe -u vimrc -c 'try | :PlugInstall | catch | echomsg "!PlugInstall Error!" | finally | :qa! | endtry'
+" $ vim -nNRe -u vim-plug-install.vim
+
+" function! s:TryInstallPlugin () abort
+" 	try
+" 		PlugInstall
+" 	catch
+" 		echomsg '!PlugInstall Error!'
+" 	finally
+" 		qa!
+" 	endtry
+" endfunction
+
+
+""
+""" Tail: Note
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
