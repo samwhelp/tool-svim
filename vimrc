@@ -196,7 +196,7 @@ function! s:PluginManager (dir_path) abort
 		return
 	endtry
 
-		call s:PluginInControl()
+	call s:PluginInControl()
 
 	" Initialize plugin system
 	call plug#end()
@@ -212,17 +212,23 @@ endfunction
 """ Head: Main
 ""
 
-function! s:Main () abort
-
-	call s:PluginManager('~/.cache/svim/plug')
-
-	"call s:ColorSchemeUse()
+function! s:ColorSchemeUseOnVimEnter() abort
 
 	augroup ColorSchemeUse
 		autocmd!
 		autocmd VimEnter * call s:ColorSchemeUse()
 	augroup END
 
+endfunction
+
+
+function! s:Main () abort
+
+	call s:PluginManager('~/.cache/svim/plug')
+
+	"call s:ColorSchemeUse()
+
+	call s:ColorSchemeUseOnVimEnter()
 
 endfunction
 
