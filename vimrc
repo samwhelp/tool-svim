@@ -13,8 +13,6 @@ scriptencoding utf-8
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Head: ColorScheme
 ""
@@ -115,8 +113,6 @@ function! s:PlugEnhance () abort
 
 
 
-
-
 endfunction
 
 ""
@@ -144,7 +140,6 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Head: PlugSvim
 ""
@@ -166,11 +161,18 @@ endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Head: PluginManager
 ""
+
+function! s:PluginInControl () abort
+	call s:PlugEnhance()
+
+	call s:PlugColorScheme()
+	call s:PlugFcitx()
+	call s:PlugSvim()
+endfunction
+
 
 function! s:PluginManager (dir_path) abort
 
@@ -194,25 +196,16 @@ function! s:PluginManager (dir_path) abort
 		return
 	endtry
 
-	call s:PlugEnhance()
-
-	call s:PlugColorScheme()
-	call s:PlugFcitx()
-	call s:PlugSvim()
+		call s:PluginInControl()
 
 	" Initialize plugin system
 	call plug#end()
-
-
-
 
 endfunction
 
 ""
 """ Tail: PluginManager
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,8 +231,6 @@ call s:Main()
 ""
 """ Tail: Main
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
