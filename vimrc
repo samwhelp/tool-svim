@@ -1,5 +1,6 @@
 
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ Head: Base
 ""
@@ -14,7 +15,7 @@ scriptencoding utf-8
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Head: ColorScheme
+""" Head: ColorSchemePick
 ""
 
 function! s:ColorSchemePick () abort
@@ -25,8 +26,10 @@ function! s:ColorSchemePick () abort
 
 
 	" ## pick colorscheme
-	"colorscheme monokai
 	colorscheme gruvbox
+	"colorscheme monokai
+	"colorscheme onedark
+	"colorscheme space_vim_theme
 
 
 	" ## ubuntu default colorscheme
@@ -57,47 +60,36 @@ function! s:ColorSchemePick () abort
 endfunction
 
 
-function! s:ColorSchemeUse () abort
-
-	try
-		call s:ColorSchemePick()
-	catch
-		"echomsg 'NotInstall ColorScheme:'
-		"echomsg 'Please install first:'
-		"echomsg ':PlugInstall'
-
-		echohl WarningMsg
-		echomsg 'ColorScheme is not installed! Please run :PlugInstall'
-		echohl None
-
-		return
-	endtry
-
-endfunction
-
 ""
-""" Tail: ColorScheme
+""" Tail: ColorSchemePick
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Head: PlugColorScheme
+""" Head: ColorSchemePlug
 ""
 
 
-function! s:PlugColorScheme () abort
+function! s:ColorSchemePlug () abort
+
 	" ## https://github.com/sickill/vim-monokai
 	Plug 'sickill/vim-monokai'
 
 	" ## https://github.com/morhetz/gruvbox
 	Plug 'morhetz/gruvbox'
 
+	" ## https://github.com/joshdick/onedark.vim
+	"Plug 'joshdick/onedark.vim'
+
+	" ## https://www.jianshu.com/p/aadce0fe9649
+	" ## https://github.com/liuchengxu/space-vim-theme
+	"Plug 'liuchengxu/space-vim-theme'
 
 
 endfunction
 
 ""
-""" Tail: PlugColorScheme
+""" Tail: ColorSchemePlug
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -110,6 +102,8 @@ function! s:PlugEnhance () abort
 	" Add extra plugin here
 	" ## https://github.com/scrooloose/nerdtree
 	"Plug 'scrooloose/nerdtree'
+
+
 
 
 
@@ -129,6 +123,20 @@ function! s:PlugFcitx () abort
 	" ## https://github.com/lilydjwg/fcitx.vim
 	Plug 'lilydjwg/fcitx.vim'
 
+
+endfunction
+
+""
+""" Tail: PlugFcitx
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: ConfFcitx
+""
+
+function! s:ConfFcitx () abort
+
 	" :help 'ttimeoutlen'
 	set ttimeoutlen=100
 
@@ -136,7 +144,7 @@ function! s:PlugFcitx () abort
 endfunction
 
 ""
-""" Tail: PlugFcitx
+""" Tail: ConfFcitx
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
@@ -147,11 +155,10 @@ endfunction
 function! s:PlugSvim () abort
 
 	" ## Svim
-
-	" ## https://github.com/samwhelp/tool-svim-core
+	" https://github.com/samwhelp/tool-svim-core
 	Plug 'samwhelp/tool-svim-core'
 
-	" ## https://github.com/samwhelp/tool-svim-colorfit
+	" https://github.com/samwhelp/tool-svim-colorfit
 	Plug 'samwhelp/tool-svim-colorfit'
 
 endfunction
@@ -162,17 +169,90 @@ endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Head: PluginManager
+""" Head: ConfSvim
+""
+
+function! s:ConfSvim () abort
+
+
+
+endfunction
+
+""
+""" Tail: ConfSvim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: PackPlugBase
+""
+
+function! s:PackPlugBase () abort
+
+	call s:PlugFcitx()
+	call s:PlugSvim()
+
+endfunction
+
+""
+""" Tail: PackPlugBase
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: PackConfBase
+""
+
+function! s:PackConfBase () abort
+
+	call s:ConfFcitx()
+	call s:ConfSvim()
+
+endfunction
+
+""
+""" Tail: PackConfBase
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: ConfigInControl
+""
+
+function! s:ConfigInControl () abort
+
+	call s:PackConfBase()
+
+endfunction
+
+
+""
+""" Tail: ConfigInControl
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: PluginInControl
 ""
 
 function! s:PluginInControl () abort
+
+	call s:PackPlugBase()
 	call s:PlugEnhance()
 
-	call s:PlugColorScheme()
-	call s:PlugFcitx()
-	call s:PlugSvim()
+	call s:ColorSchemePlug()
+
 endfunction
 
+
+""
+""" Tail: PluginInControl
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: PluginManager
+""
 
 function! s:PluginManager (dir_path) abort
 
@@ -190,8 +270,9 @@ function! s:PluginManager (dir_path) abort
 		" - Avoid using standard Vim directory names like 'plugin'
 		call plug#begin(a:dir_path)
 	catch
-		echomsg 'NotInstall: https://github.com/junegunn/vim-plug/'
-		echomsg 'Please install first:'
+		echomsg ' '
+		echomsg '+NotInstall: https://github.com/junegunn/vim-plug/'
+		echomsg '    # Please install first:'
 		echomsg '$ curl -fLo ~/.cache/svim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 		return
 	endtry
@@ -209,8 +290,29 @@ endfunction
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""" Head: Main
+""" Head: ColorSchemeUse
 ""
+
+
+function! s:ColorSchemeUse () abort
+
+	try
+		call s:ColorSchemePick()
+	catch
+		" echomsg ' '
+		" echomsg '+NotInstall ColorScheme:'
+		" echomsg '    # Please install first:'
+		" echomsg ':PlugInstall'
+
+		echohl WarningMsg
+		echomsg 'ColorScheme is not installed! Please run :PlugInstall'
+		echohl None
+
+		return
+	endtry
+
+endfunction
+
 
 function! s:ColorSchemeUseOnVimEnter() abort
 
@@ -222,13 +324,24 @@ function! s:ColorSchemeUseOnVimEnter() abort
 endfunction
 
 
+""
+""" Tail: ColorSchemeUse
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" Head: Main
+""
+
 function! s:Main () abort
 
 	call s:PluginManager('~/.cache/svim/plug')
 
-	"call s:ColorSchemeUse()
+	call s:ColorSchemeUse()
 
-	call s:ColorSchemeUseOnVimEnter()
+	"call s:ColorSchemeUseOnVimEnter()
+
+	call s:ConfigInControl()
 
 endfunction
 
@@ -263,3 +376,4 @@ call s:Main()
 ""
 """ Tail: Note
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
