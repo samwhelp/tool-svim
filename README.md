@@ -45,11 +45,22 @@ Please read doc/[feature](https://samwhelp.github.io/tool-svim-doc/read/en_us/#/
 
 ## Related Projects
 
+* [tool-svim-doc](https://github.com/samwhelp/tool-svim-doc)
 * [tool-svim-gen](https://github.com/samwhelp/tool-svim-gen)
 * [tool-svim-ctrl](https://github.com/samwhelp/tool-svim-ctrl)
+
+
+## Prototype Projects
+
+* skel-project-plan/example/[project-vimrc](https://github.com/samwhelp/skel-project-plan/tree/gh-pages/example/project-vimrc)
 
 
 ## Enhance Version
 
 * [tool-mvim](https://github.com/samwhelp/tool-mvim)
+* [tool-lvim](https://github.com/samwhelp/tool-lvim)
 
+
+## Experiment Version
+
+* [tool-ivim](https://github.com/samwhelp/tool-ivim)
