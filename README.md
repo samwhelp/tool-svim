@@ -1,6 +1,6 @@
 # tool-svim
 
-* [tool-svim](https://samwhelp.github.io/tool-svim) ([GitHub](https://github.com/samwhelp/tool-svim))
+* [tool-svim](https://samwhelp.github.io/tool-svim-doc/) ([GitHub](https://github.com/samwhelp/tool-svim))
 
 
 ## Feature
