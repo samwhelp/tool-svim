@@ -72,6 +72,7 @@ Or read tool-svim-core/[README.md](https://github.com/samwhelp/tool-svim-core).
 
 * [tool-mvim](https://github.com/samwhelp/tool-mvim)
 * [tool-lvim](https://github.com/samwhelp/tool-lvim)
+* [tool-hvim](https://github.com/samwhelp/tool-hvim)
 
 
 ## Experiment Version
