@@ -35,8 +35,8 @@ Or read tool-svim-core/[README.md](https://github.com/samwhelp/tool-svim-core).
 
 ## Doc
 
-* [tool-svim-doc](https://samwhelp.github.io/tool-svim-doc) [GitHub](https://github.com/samwhelp/tool-svim-doc)
-* [note-about-vim](https://samwhelp.github.io/note-about-vim) [GitHub](https://github.com/samwhelp/note-about-vim)
+* [tool-svim-doc](https://samwhelp.github.io/tool-svim-doc) ([GitHub](https://github.com/samwhelp/tool-svim-doc))
+* [note-about-vim](https://samwhelp.github.io/note-about-vim) ([GitHub](https://github.com/samwhelp/note-about-vim))
 
 
 ## Core Plugin
