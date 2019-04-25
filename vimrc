@@ -176,6 +176,9 @@ function! s:PlugSvim () abort
 	" https://github.com/samwhelp/tool-svim-colorfit
 	Plug 'samwhelp/tool-svim-colorfit'
 
+	" https://github.com/samwhelp/tool-svim-core-enhance
+	Plug 'samwhelp/tool-svim-core-enhance'
+
 endfunction
 
 ""
