@@ -52,7 +52,7 @@ On [Normal Mode](https://vimhelp.org/index.txt.html#normal-index), some key map 
 | Plugin | Note |
 | --- | --- |
 | [tool-svim-core](https://github.com/samwhelp/tool-svim-core) | [[key binding](https://samwhelp.github.io/tool-svim-doc/read/en_us/#/feature)([中文簡介](https://samwhelp.github.io/tool-svim-doc/read/zh_tw/#/feature))] and some option setting. |
-| [tool-svim-core-enhance](https://github.com/samwhelp/tool-svim-core-enhance) | -- |
+| [tool-svim-core-enhance](https://github.com/samwhelp/tool-svim-core-enhance) | --- |
 | [tool-svim-colorfit](https://github.com/samwhelp/tool-svim-colorfit) | for fix color with color scheme used |
 
 
@@ -68,7 +68,7 @@ On [Normal Mode](https://vimhelp.org/index.txt.html#normal-index), some key map 
 
 | Plugin | Note |
 | --- | --- |
-| [lilydjwg/fcitx.vim](https://github.com/lilydjwg/fcitx.vim) |
+| [lilydjwg/fcitx.vim](https://github.com/lilydjwg/fcitx.vim) | --- |
 
 
 ## Related Projects
