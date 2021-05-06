@@ -3,6 +3,11 @@
 * [tool-svim](https://samwhelp.github.io/tool-svim-doc/) ([GitHub](https://github.com/samwhelp/tool-svim))
 
 
+## Installer
+
+* [vimrc-get](https://github.com/samwhelp/note-about-vim/tree/gh-pages/_demo/project/vimrc-profile/vimrc-get)
+
+
 ## Feature
 
 On [Normal Mode](https://vimhelp.org/index.txt.html#normal-index), some key map added.
@@ -19,7 +24,7 @@ On [Normal Mode](https://vimhelp.org/index.txt.html#normal-index), some key map 
 | `<Ctrl+l>` | [:tabnext](https://vimhelp.org/tabpage.txt.html#:tabnext)&lt;CR&gt; | To Next **TabPage** |
 
 
-## Window Resize
+### Window Resize
 
 | Key | Map |
 | --- | --- |
