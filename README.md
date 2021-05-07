@@ -7,6 +7,10 @@
 
 * [vimrc-get](https://github.com/samwhelp/note-about-vim/tree/gh-pages/_demo/project/vimrc-profile/vimrc-get)
 
+``` sh
+$ vimrc-get svim
+```
+
 ## Doc
 
 * [tool-svim-doc](https://samwhelp.github.io/tool-svim-doc) ([GitHub](https://github.com/samwhelp/tool-svim-doc))
