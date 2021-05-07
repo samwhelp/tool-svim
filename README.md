@@ -48,3 +48,15 @@ $ vimrc-get svim
 ## Experiment Version
 
 * [tool-ivim](https://github.com/samwhelp/tool-ivim)
+
+
+## Clone Command
+
+``` sh
+git clone https://github.com/samwhelp/tool-svim
+git clone https://github.com/samwhelp/tool-svim-core
+git clone https://github.com/samwhelp/tool-svim-core-enhance
+git clone https://github.com/samwhelp/tool-svim-colorfit
+git clone https://github.com/samwhelp/tool-svim-gen
+git clone https://github.com/samwhelp/tool-svim-doc
+```
